@@ -11,6 +11,8 @@ namespace Listner
                 case "MyName":
                     return new ResponseListen() { ResponseText = GetMyName(), statusCode = HttpStatusCode.OK };
                     break;
+
+                // по заданию здесь код Information но когда я его использую выдает ошибку, я так понял он должен быть использован в процессе другого запроса
                 case "Information":
                     return new ResponseListen() { ResponseText = "1xx – Information", statusCode = HttpStatusCode.OK };
                     break;
@@ -27,7 +29,7 @@ namespace Listner
                     return new ResponseListen() { ResponseText = "5xx – Server error", statusCode = HttpStatusCode.InternalServerError };
                     break;
                 case "MyNameByHeader":
-                    return new ResponseListen() { Header = "HeaderTaskExample", statusCode = HttpStatusCode.OK, ResponseText = "" };
+                    return new ResponseListen() { Header = GetMyName(), statusCode = HttpStatusCode.OK, ResponseText = "" };
                     break;
 
 

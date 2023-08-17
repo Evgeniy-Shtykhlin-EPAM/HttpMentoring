@@ -43,7 +43,7 @@ namespace Listner
             response.StatusCode = (int)responseData.statusCode;
             if (responseData.Header != "")
             {
-                response.Headers.Add("HeaderExample", responseData.Header);
+                response.Headers.Add("X-MyName", responseData.Header);
             }
 
             response.ContentLength64 = buffer.Length;

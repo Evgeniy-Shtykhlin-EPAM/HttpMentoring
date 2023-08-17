@@ -31,10 +31,7 @@ namespace Client
                 if (methodName == "MyNameByHeader")
                 {
                     Console.WriteLine("Headers: ");
-                    foreach (var header in result.Headers)
-                    {
-                        Console.WriteLine("\t Header Key: "+header.Key);
-                    }
+                    Console.WriteLine(result.Headers.GetValues("X-MyName").FirstOrDefault());
                 }
 
                 return contents;
